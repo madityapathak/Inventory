@@ -1,0 +1,34 @@
+<h1>inventory</h1>
+
+<div><a href = "{% url 'accounts:additemininventory' %}">add item in inventory</a></div>
+
+
+
+<div style="display:flex,flex-flow:column">
+
+    {% for data in details %}
+
+        {% if data.product %}
+            <div>Product</div>
+            <div>{{data.product.name}}</div>
+            <div>{{data.quantity}}</div>
+            <div>{{data.product.status}}</div>
+            <div>{{data.product.arrival_date | date:'Y-m-d'}}</div>
+        <hr>
+        {% endif %}
+
+        {% if data.raw_material %}
+            <div>Raw Material</div>
+            <div>{{data.raw_material.name}}</div>
+            <div>{{data.quantity}}</div>
+            <div>{{data.stage}}</div>
+            <div>{{data.material_status}}</div>
+            <hr>
+            
+        {% endif %}
+
+    {% endfor %}
+
+
+</div>
+

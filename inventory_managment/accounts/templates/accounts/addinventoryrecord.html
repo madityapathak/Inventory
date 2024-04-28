@@ -1,0 +1,9 @@
+add inventory record
+
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    {{InventoryForm.as_p}}
+
+    <input type="submit" value="Add inventory record"><br>
+</form>

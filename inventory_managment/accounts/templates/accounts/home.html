@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>home</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <div style="display:flex,flex-flow:row">
+    <div><a href = "{% url 'accounts:logout' %}">log out</a></div>
+    <div><a href = "{% url 'accounts:addproduct' %}">add product</a></div>
+    <div><a href = "{% url 'accounts:addrawmaterial' %}">add material</a></div>
+    <div><a href = "{% url 'accounts:inventory' %}">goto inventory</a></div>
+    <div><a href = "{% url 'accounts:repairandreject' %}">Repair and Rejetions</a></div>
+    <div><a href = "">in hand stocks</a></div>
+    <div><a href = "">Material Tracking</a></div>
+    <div><a href = "">Analytics</a></div>
+  </div>
+  <div>
+    {% comment %} <div><h1>Your products</h1></div>
+    <div style="display:flex,flex-flow:row">
+    {% for product in products %}
+       <div><a href="{% url 'accounts:productdetail' product.id %}">{{product.name}}</a></div>
+    {% endfor %}
+    <div> {% endcomment %}
+  </div>
+
+</body>
+</html>

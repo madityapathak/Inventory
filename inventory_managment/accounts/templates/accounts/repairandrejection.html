@@ -1,0 +1,23 @@
+<div style="display:flex,flex-flow:column">
+
+    {% for product in products %}
+        
+        <div>{{product.product}}</div>  
+
+        {% if product.is_in_repair %}
+        <div>product is in repair</div>
+        <div>product will be repaired till : {{product.repair_completion_date | date:'Y-m-d'}}</div>
+        {% endif %}
+        {% if product.is_rejected %}
+        <div>product is rejected</div>
+        <div>product rejected on : {{product.rejection_date | date:'Y-m-d'}}</div>
+        {% endif %}
+       
+        
+        <hr>
+       
+    {% endfor %}
+
+
+</div>
+
